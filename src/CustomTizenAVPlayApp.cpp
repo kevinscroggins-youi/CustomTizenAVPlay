@@ -2,7 +2,7 @@
 
 #include "CustomTizenAVPlayApp.h"
 
-#include "bridges/example/ExampleBridgeLocator.h"
+#include "player/CustomTizenNaClVideoPlayer.h"
 
 #include <framework/YiFramework.h>
 #include <logging/YiLogger.h>

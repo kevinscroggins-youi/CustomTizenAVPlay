@@ -3,7 +3,7 @@
 #include "AppFactory.h"
 #include "CustomTizenAVPlayApp.h"
 
-#define APP_NAME "Custom Tizen Code Test"
+#define APP_NAME "Custom Tizen AVPlay"
 
 #if defined(YI_PS4)
 #    define APP_WIDTH (1920)
