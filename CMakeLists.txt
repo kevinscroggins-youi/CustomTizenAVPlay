@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 # The name of the project. When building for Android, this is passed from Android Studio.
 if(NOT YI_PROJECT_NAME)
-    set(YI_PROJECT_NAME "TemplateProject")
+    set(YI_PROJECT_NAME "CustomTizenAVPlay")
 endif()
 
 # This is used solely for projects that are built within the You.i Engine repository and can be removed for commercial projects.
@@ -14,18 +14,24 @@ include(${YouiEngine_DIR}/cmake/Hunter/YiInitializeHunter.cmake OPTIONAL)
 # project() loads the toolchain file, which sets YouiEngine_DIR and YI_PLATFORM, compiler settings, etc.
 project(${YI_PROJECT_NAME} LANGUAGES C CXX)
 
+include(cmake/Modules/${YI_PLATFORM_LOWER}/ConfigureWebAssets.cmake OPTIONAL)
+
+if(COMMAND configure_web_assets)
+    configure_web_assets()
+endif()
+
 include(${YouiEngine_DIR}/cmake/Modules/YiAppSetup.cmake)
 
 # Pre-defined options
 
 # The package name used for the project.
 if(NOT YI_PACKAGE_NAME)
-    set(YI_PACKAGE_NAME "tv.youi.templateproject")
+    set(YI_PACKAGE_NAME "tv.youi.customtizenavplay")
 endif()
 
 # The name of the application displayed on the device.
 if(NOT YI_DISPLAY_NAME)
-    set(YI_DISPLAY_NAME "Template Project")
+    set(YI_DISPLAY_NAME "Custom Tizen AVPlay")
 endif()
 
 # The url scheme used to launch the app through deep linking on various platforms.

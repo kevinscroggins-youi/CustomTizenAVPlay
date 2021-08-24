@@ -1,8 +1,9 @@
+// © You i Labs Inc. 2000-2020. All rights reserved.
 
 #include "AppFactory.h"
-#include "TemplateProjectApp.h"
+#include "CustomTizenAVPlayApp.h"
 
-#define APP_NAME "Template Project"
+#define APP_NAME "Custom Tizen Code Test"
 
 #if defined(YI_PS4)
 #    define APP_WIDTH (1920)
@@ -14,7 +15,7 @@
 
 std::unique_ptr<CYIApp> AppFactory::Create()
 {
-    return std::make_unique<TemplateProjectApp>();
+    return std::make_unique<CustomTizenAVPlayApp>();
 }
 
 int AppFactory::GetWindowWidth()
